@@ -4,11 +4,11 @@ const {ObjectId}=require('bson');
 
 const router=express.Router();
 
-const {Detail}=require('../Model/Employee')
+const {Details}=require('../Model/Employee')
 
 router.get('/',(req,res)=>{
    
-    Detail.find((err,docs)=>{
+    Details.find((err,docs)=>{
         if(!err){
             res.send(docs);
         }else{
@@ -18,11 +18,12 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/',(req,res)=>{
-    var details=new Detail({
+    var details=new Details({
         fname:req.body.fname,
         lname:req.body.lname,
         email:req.body.email,
         password:req.body.password,
+        password1:req.body.password1,
         position:req.body.position,
     })
     details.save((err,doc)=>{

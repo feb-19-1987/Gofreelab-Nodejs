@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use('/Detail',detailController)
+app.use('/Details',detailController)
 
 app.use('/',(req,res)=>{
     res.send('Welcome')
